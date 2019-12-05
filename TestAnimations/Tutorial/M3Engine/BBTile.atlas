@@ -1,0 +1,22 @@
+images {
+  image: "/assets/BlueTile.png"
+}
+images {
+  image: "/assets/BlueTileGlow.png"
+}
+animations {
+  id: "BlueTileExplosion"
+  images {
+    image: "/assets/BlueTileFade.png"
+  }
+  images {
+    image: "/assets/BlueTileExplode.png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 3
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

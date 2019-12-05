@@ -1,0 +1,48 @@
+[project]
+title = MyCN
+
+[bootstrap]
+main_collection = /Tutorial/tutorial.collectionc
+
+[input]
+game_binding = /input/game.input_bindingc
+use_accelerometer = 0
+
+[display]
+width = 1280
+height = 720
+display_profiles = /builtins/render/default.display_profilesc
+high_dpi = 1
+fullscreen = 0
+
+[ios]
+bundle_identifier = com.example.todo
+
+[osx]
+bundle_identifier = com.example.todo
+
+[android]
+input_method = HiddenInputField
+push_icon_small = /assets/art/GameIcon/gracehead.png
+push_icon_large = /assets/art/GameIcon/gracehead.png
+app_icon_192x192 = /assets/art/GameIcon/gracehead.png
+app_icon_144x144 = /assets/art/GameIcon/gracehead.png
+app_icon_96x96 = /assets/art/GameIcon/gracehead.png
+app_icon_72x72 = /assets/art/GameIcon/gracehead.png
+app_icon_48x48 = /assets/art/GameIcon/gracehead.png
+app_icon_36x36 = /assets/art/GameIcon/gracehead.png
+immersive_mode = 1
+
+[script]
+shared_state = 1
+
+[physics]
+gravity_y = -1000.0
+scale = 0.01
+
+[sprite]
+max_count = 1024
+
+[graphics]
+texture_profiles = /builtins/graphics/default.texture_profiles
+

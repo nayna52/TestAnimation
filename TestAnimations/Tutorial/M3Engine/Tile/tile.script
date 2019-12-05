@@ -1,0 +1,69 @@
+------------------------------------------------------------------------
+-- LOCAL VARIABLES
+------------------------------------------------------------------------
+go.property("type", hash("coin"))
+
+------------------------------------------------------------------------
+-- DEFOLD FUNCTIONS
+------------------------------------------------------------------------
+
+function init(self)
+	-- Add initialization code here
+	-- Remove this function if not needed
+	go.set_scale(0.32)        -- render scaled down
+
+	if self.type ~= nil then
+		msg.post("#sprite", "play_animation", { id = self.type })
+	else
+		msg.post("#sprite", "disable")
+	end
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+	if message_id == hash("glow") then
+		curr_type = tostring(self.type)
+		curr_type = string.gsub(curr_type, '%]', '')
+		curr_type = string.gsub(curr_type, '%[', '')
+		curr_type = string.gsub(curr_type, "hash: ", '')
+		curr_type = curr_type .. "Glow"
+		msg.post("#sprite", "play_animation", { id = hash(curr_type) })
+	end
+	if message_id == hash("explode") then
+		curr_type = tostring(self.type)
+		curr_type = string.gsub(curr_type, '%]', '')
+		curr_type = string.gsub(curr_type, '%[', '')
+		curr_type = string.gsub(curr_type, "hash: ", '')
+		curr_type = curr_type .. "Explosion"
+		msg.post("#sprite", "play_animation", { id = hash(curr_type) })
+	end
+	if message_id == hash("deglow") then
+		curr_type = tostring(self.type)
+		curr_type = string.gsub(curr_type, '%]', '')
+		curr_type = string.gsub(curr_type, '%[', '')
+		curr_type = string.gsub(curr_type, "Glow", '')
+		curr_type = string.gsub(curr_type, "hash: ", '')
+		msg.post("#sprite", "play_animation", { id = hash(curr_type) })
+	end
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
